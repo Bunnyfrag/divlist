@@ -1,0 +1,117 @@
+/*input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ input[type=number] {
+    -moz-appearance:textfield;
+} */
+
+body{
+	background-color: hsl(224, 20%, 38%);
+	color: white;
+}
+h1{
+	color: #35017f;
+	filter: invert(100%);
+}
+input, select{
+	color: black;
+}
+
+.right{
+	float: right;
+}
+
+.theHeaderOne{
+	background-color:#dedede;
+}
+.sorter:hover{
+	color: red;
+}
+
+/*Cardgame*/
+#cardgame-list{
+
+min-height:300px;
+padding-top:25px;
+}
+.card{
+	position:relative;
+	width:200px;
+	height:250px;
+	background-color:white;
+	background: radial-gradient(white, #dedede, black);
+	border-radius:10px;
+	border-width:4px;
+	float:left;
+	margin-left:10px;
+	margin-bottom:4px;
+	border-color:gold;
+	border-style:groove;
+}
+.card > img{
+	position:absolute;
+	left:46px;
+	top:40px;
+	background:red;
+}
+.card > name{
+	position:absolute;
+	/* left:50px; */
+	top:140px;
+	color:black;
+	width:100%;
+	text-align: center;
+}
+.health{
+	position:absolute;
+	left:80px;
+	top:200px;
+	color:red;
+}
+.def{
+	position:absolute;
+	left:10px;
+	top:10px;
+	
+	color:orange;
+}
+.atk{
+	position:absolute;
+	right:10px;
+	top:10px;
+	
+	color:#ffef2d;
+}
+.health{}
+/**/
+/*THE ONLY ACTUAL PART OF THE PAGE THAT MAY BE WORTH USING*/
+
+.divtable{
+	min-width:700px;
+}
+
+.sorter{
+  cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Chrome, Opera */
+}
+
+
+#DivList-pageNb{
+	-moz-appearance:textfield;
+	width:30px;
+}
+#DivList-pageNb::-webkit-outer-spin-button,
+#DivList-pageNb::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+#DivList-list>div:nth-child(even){
+	background-color:#c3b0a2;
+}
