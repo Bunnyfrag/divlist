@@ -17,6 +17,9 @@ h1{
 	color: lime;
 
 }
+#navbar > button{
+	margin-top: 1.5%;
+}
 code > script{
 	display:inline;
 	font-size: inherit;
