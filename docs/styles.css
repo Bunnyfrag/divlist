@@ -11,25 +11,29 @@ body{
 	background-color: black;
 	color: white;
   padding-top: 50px;
+	font-size: 18px;
 }
 h1{
 	color: lime;
-}
-h2{
-	color: lime;
+
 }
 code > script{
 	display:inline;
 	font-size: inherit;
 	color: inherit;
+	/*padding: 5px;*/
 }
 code{
 	display: block;
 	font-size: 16px;
+	background-color: white;
 	color: black;
+	border-style: solid;;
+	border-radius: 5px;
+	border-width: 2px;
 }
 li,label{
-	font-size: 20px;
+
 	margin-bottom: 5px;
 	margin-top: 5px;
 }

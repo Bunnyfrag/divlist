@@ -45,10 +45,13 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Main goal</a></li>
-            <li><a href="#about">How to use</a></li>
-            <li><a href="#contact">Examples</a></li>
+            <li><a href="#Examples">Examples</a></li>
+            <li><a href="#HowTo">How to use</a></li>
           </ul>
         </div><!--/.nav-collapse -->
+        <div class="collapse navbar-collapse">
+          <button onclick="invertTheme()">alt</button>
+        </div>
       </div>
     </nav>
 
@@ -61,10 +64,15 @@
       		Please read below for more infos.</p>
       </div>
 
-      <div class="container">
+      <div class="container" id="Examples">
+        <h1>Examples</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+
+      <div class="container" id="HowTo">
         <h1>How to use</h1>
         <p>
-          <h3>REQUIRE:<h3/><br>
+          <h3>REQUIRE:</h3><br>
               <ul>
                 <li>Bootstrap css ?	http://getbootstrap.com</li>
               </ul>
@@ -101,9 +109,9 @@
             This is great to make some sort of 'header'.
             You can generate it with the .genSorters() method and then append it: pass the id of the header container as the first argument, then specify the css classes for the header and the label of the rows<br>
               <label>example:</label>
-              <code><script type="text/plain">
-              divlist.genSorters('sortbar','col-md-12 theHeaderOne','sorter col-md-2','This','is','the','header','Date','random numbers');
-              </script></code><br>
+              <code>
+              divlist.genSorters('sortbar','col-md-12 theHeaderOne','sorter col-md-2',<br>'This','is','the','header','Date','random numbers');
+              </code><br>
             Or you can do it yourself if you don't like the generated layout<br>
               <label>example:</label>
                       <code><script type="text/plain">
@@ -172,11 +180,6 @@
         </p>
       </div>
 
-      <div class="container">
-        <h1>Examples</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-
     </main><!-- /.container -->
 
       <!-- SPO js -->
@@ -185,12 +188,12 @@
     <script>
     window.onload = function() {
     //divtable
-      divtable = new SPO('DivList-list',5,'DivList-pageNb');
-      divtable.genSorters('insertHeaderHere','col-md-12 theHeaderOne','sorter col-md-2','It`s','the','header!','arbitrary','Date','random numbers');
-    divtable.sort('date');
-      document.getElementById('DivList-list').style.display = 'block';		// Avoid popping effect
-    //cardgame
-    cardgame = new SPO('cardgame-list');
+    //   divtable = new SPO('DivList-list',5,'DivList-pageNb');
+    //   divtable.genSorters('insertHeaderHere','col-md-12 theHeaderOne','sorter col-md-2','It`s','the','header!','arbitrary','Date','random numbers');
+    //   divtable.sort('date');
+    //   document.getElementById('DivList-list').style.display = 'block';		// Avoid popping effect
+    // //cardgame
+    //   cardgame = new SPO('cardgame-list');
     };
     function makebtn(i){
     btn = document.createElement("input");
@@ -199,6 +202,27 @@
       btn.class='btn btn-info';
       btn.value=i;
     document.getElementById('addhere').appendChild(btn);
+    }
+    function invertTheme(){
+      body  = document.getElementsByTagName('body')[0];
+      h1    = document.getElementsByTagName('h1');
+
+      if( body.style.color != 'black' ){
+        body.style.color      = 'black';
+        body.style.background = 'white';
+        for( var i=0; i < h1.length; i++){
+          h1[i].style.filter = 'invert(60%)';
+          h1[i].style.textShadow= '2px 2px 2px black';
+        }
+      }else{
+        body.style.color      = 'white';
+        body.style.background = 'black';
+        for( var i=0; i < h1.length; i++){
+          h1[i].style.filter = 'invert(0%)';
+          h1[i].style.textShadow= '';
+        }
+
+      }
     }
     </script>
   </body>
