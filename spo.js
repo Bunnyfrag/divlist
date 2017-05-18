@@ -1,11 +1,11 @@
 /*  /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-	|-----DivList--By Bunnyfrag-(Blame the trainee)----|
+	|---searpagort--By Bunnyfrag-(Blame the trainee)---|
 	|--------------------------------------------------|
 	\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
 	Special thanks to Steve for the help
 */
-	class DivList {
+	class SPO {
 
 		constructor(ListId,Lpp,PageNbId)
 		{

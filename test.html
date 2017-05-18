@@ -231,18 +231,18 @@
     </main><!-- /.container -->
 
 
-	<!-- DivList js -->
-	<script src='./DivList.js'></script>
+	<!-- searpagort js -->
+	<script src='./spo.js'></script>
 
 	<script>
   window.onload = function() {
 	//divtable
-    divtable = new DivList('DivList-list',5,'DivList-pageNb');
+    divtable = new SPO('DivList-list',5,'DivList-pageNb');
     divtable.genSorters('insertHeaderHere','col-md-12 theHeaderOne','sorter col-md-2','It`s','the','header!','arbitrary','Date','random numbers');
 	divtable.sort('date');
     document.getElementById('DivList-list').style.display = 'block';		// Avoid popping effect
 	//cardgame
-	cardgame = new DivList('cardgame-list');
+	cardgame = new SPO('cardgame-list');
   };
 	function makebtn(i){
 	btn = document.createElement("input");

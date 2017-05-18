@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>DivList :js pagin' and more</title>
+    <title>Searpagort :js pagin' and more</title>
 
     <!-- Bootstrap core CSS -->
     <!-- Latest compiled and minified CSS -->
@@ -40,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">DivList</a>
+          <a class="navbar-brand" href="#">Searpagort</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -56,7 +56,7 @@
 
       <div class="container">
         <h1>Main Goal</h1>
-        <p class="lead">DivList is a simple class that let you create paginated and sortable lists from anything you can toss in a div*.<br>
+        <p class="lead">Searpagort is a simple class that let you create paginated and sortable lists from anything you can toss in a div*.<br>
           <small>*Maybe</small><br>
       		Please read below for more infos.</p>
       </div>
@@ -70,9 +70,9 @@
               </ul>
         </p>
         <p class="lead">
-          Create a new DivList with :
+          Create a new Searpagort instance with :
             <code>
-      			instance = new DivList('ListId',Lpp,'PageNbId');
+      			instance = new SPO('ListId',Lpp,'PageNbId');
             </code>
       		where 'ListId' is the id of the element that contains the elements you want to turn into a list,
       			  lpp is the default number of lines per pages,
@@ -81,13 +81,13 @@
       		You will need to store the object somewhere to interact with the list, as it also contains the commands to do so.
         </p>
         <p>
-          DivList requires specific components in order to work:
+          SPO requires specific components in order to work:
           <ul>
         		<li>an element identified by an id that contains the elements forming the list. You need to pass said id as the first argument of the constructor.</li>
           </ul>
         			note that each of those elements will be considered as the lines and their childrens as the 'rows'.<br>
         			<label>example:</label>
-              <code><script type="text/plain"><div class='container' id='DivList-list'></div></script></code>
+              <code><script type="text/plain"><div class='container' id='SPO-list'></div></script></code>
         </p>
         <p>
           <h3>Optional:</h3>
@@ -165,7 +165,7 @@
               <label>example:</label>
               <code>
               window.onload = function() {<br>
-                divlist = new DivList('DivList-list',5,'DivList-pageNb');<br>
+                divlist = new SPO('DivList-list',5,'DivList-pageNb');<br>
                 document.getElementById('DivList-list').style.display = 'block';		// Avoid popping effect<br>
               };<br>
               </code>
@@ -179,18 +179,18 @@
 
     </main><!-- /.container -->
 
-      <!-- DivList js -->
-    <script src='./DivList.js'></script>
+      <!-- SPO js -->
+    <script src='../spo.js'></script>
 
     <script>
     window.onload = function() {
     //divtable
-      divtable = new DivList('DivList-list',5,'DivList-pageNb');
+      divtable = new SPO('DivList-list',5,'DivList-pageNb');
       divtable.genSorters('insertHeaderHere','col-md-12 theHeaderOne','sorter col-md-2','It`s','the','header!','arbitrary','Date','random numbers');
     divtable.sort('date');
       document.getElementById('DivList-list').style.display = 'block';		// Avoid popping effect
     //cardgame
-    cardgame = new DivList('cardgame-list');
+    cardgame = new SPO('cardgame-list');
     };
     function makebtn(i){
     btn = document.createElement("input");
