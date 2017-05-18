@@ -129,6 +129,7 @@
 				if( !isNaN(x) && !isNaN(y) ){
 					return parseInt( x )*multi - parseInt( y )*multi;
 				}else{
+					if(x==0){x=''};if(y==0){y=''};	// In case one of the dataset is null
 					if ( multi == 1 ){
 						return x.localeCompare(y);
 					}else{
