@@ -1,4 +1,4 @@
-/*  /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+/*/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 	|---searpagort--By Bunnyfrag-(Blame the trainee)---|
 	|--------------------------------------------------|
 	\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
@@ -10,23 +10,32 @@
 		constructor(ListId,Lpp,PageNbId)
 		{
 			this.searching		= false;
-			this.found			= [];									// This is where we store the searching queries answers
+			this.found			= [];											// This is where we store the searching queries answers
 
 			if( typeof ListId 		=== 'undefined')	{ throw new Error('First argument required'); }		else{ this.listId = ListId; }	// This id must refer to the object containing all the divs
 			if( typeof PageNbId 	!== 'undefined')	{ this.pageNbId = PageNbId; }														// This input's value will always be equal to the page number displayed.
 			if( typeof Lpp 			=== 'undefined')	{ this.lpp = 10 }									else{ this.lpp = Lpp; }			// Stands for lines per pages
 
-			this.list			= [];												// This is where we hide all of your divs :)
+			this.list				= [];											// This is where we hide all of your divs :)
 			for( var el=0; el < document.getElementById(this.listId).children.length; el++){
 				this.list.push(document.getElementById(this.listId).children[el]);	// And this is how we get them in here.
 			}
 
 			this.sortOrder		= 'asc';								// Used to keep track of the sorting order. Changing it to anything but 'asc' would invert the starting order
-			this.arrow 			= document.createElement("span");					// Span used to display the arrow. Uses Bootstrap classes. Feel free to replace those in the .sort() method
-			this.arrow.setAttribute('aria-hidden',"true");
-			this.arrow.className= "glyphicon glyphicon-chevron-down";
+
+			this.makeArrow('span','glyphicon glyphicon-chevron-','up','down');			// Arrow. Uses Bootstrap classes. Feel free to replace that by calling the function again
 			this.sort();															// Default sorting. It also call page() so it doesn't display everything at once
 		}
+
+		makeArrow(elementType, baseClassName, ascClassName, descClassName){
+			this.arrow 						= document.createElement(elementType);
+			this.arrow.className	= baseClassName+descClassName;
+			this.arrow.base				= baseClassName;
+			this.arrow.asc				= ascClassName;
+			this.arrow.desc				= descClassName;
+			return;
+		}
+
 
 		search(tf)
 		{
@@ -85,7 +94,7 @@
 					//argnb is undefined
 
 				default:
-					if(this.arrow.parentNode !== null){						// If appended to something, remove it
+					if(this.arrow.parentNode !== null){				// If appended to something, remove it
 						this.arrow.parentNode.removeChild(this.arrow);
 					}
 					if (typeof order !== 'undefined' && order != this.sortOrder){
@@ -97,13 +106,13 @@
 
 			if(switchOrder)
 			{
-				this.arrow.className = "glyphicon glyphicon-chevron-";			// Here is the css class for the bootstrap glyphicon, minus the 'up' or 'down' prefix
+				this.arrow.className = this.arrow.base;			// Here is the css class for the bootstrap glyphicon, minus the 'up' or 'down' prefix
 				if( this.sortOrder == 'asc' ){
 					this.sortOrder = 'desc';
-					this.arrow.className+='up';
+					this.arrow.className+=this.arrow.asc;
 				}else{
 					this.sortOrder = 'asc';
-					this.arrow.className+='down';
+					this.arrow.className+=this.arrow.desc;
 				}
 
 			}
