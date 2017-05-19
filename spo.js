@@ -150,7 +150,7 @@
 			this.page();
 		}
 
-		lastPage(pageNumber)							// Could be useful to display it somewhere. also used in page()
+		lastPage()							// Could be useful to display it somewhere. also used in page()
 		{
 
 			var arraySize;
