@@ -49,69 +49,18 @@ input, select{
 	float: right;
 }
 
-.theHeaderOne{
-	background-color:#dedede;
+.Header{
+	background-color:#3fd459;
 }
 .sorter:hover{
 	color: red;
 }
+#funcList{
+	min-height: 400px;
+}
 
-/*Cardgame*/
-#cardgame-list{
 
-min-height:300px;
-padding-top:25px;
-}
-.card{
-	position:relative;
-	width:200px;
-	height:250px;
-	background-color:white;
-	background: radial-gradient(white, #dedede, black);
-	border-radius:10px;
-	border-width:4px;
-	float:left;
-	margin-left:10px;
-	margin-bottom:4px;
-	border-color:gold;
-	border-style:groove;
-}
-.card > img{
-	position:absolute;
-	left:46px;
-	top:40px;
-	background:red;
-}
-.card > name{
-	position:absolute;
-	/* left:50px; */
-	top:140px;
-	color:black;
-	width:100%;
-	text-align: center;
-}
-.health{
-	position:absolute;
-	left:80px;
-	top:200px;
-	color:red;
-}
-.def{
-	position:absolute;
-	left:10px;
-	top:10px;
 
-	color:orange;
-}
-.atk{
-	position:absolute;
-	right:10px;
-	top:10px;
-
-	color:#ffef2d;
-}
-.health{}
-/**/
 /*THE ONLY ACTUAL PART OF THE PAGE THAT MAY BE WORTH USING*/
 
 .divtable{

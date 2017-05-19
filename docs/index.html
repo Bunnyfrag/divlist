@@ -185,10 +185,11 @@
       <section class="container" id="func">
         <h1>Procedures</h1>
         <p>This is a comprehensive list of all the procedures you can use<p/>
+          <nav class="pull-right">Search a procedure or argument: <input type=text onkeyup="func.search(this.value)"></nav>
         <div id="funcListHeader"></div>
         <div id="funcList">
 
-          <div>
+          <div data-oOrder=1>
             <figure>makeArrow(elementType, baseClassName, ascClassName, descClassName)</figure>
             <figcaption>Customize the sorter arrow with element type and css classes</figcaption>
             <code>instance.makeArrow('figure','glyphicon glyphicon-chevron-','up','down')</code>
@@ -204,7 +205,7 @@
             </dl>
           </div>
 
-          <div>
+          <div data-oOrder=2>
             <figure>search(tf)</figure>
             <figcaption>Search the list for a specific string and only display the lines containing it</figcaption>
             <code>instance.search('something')</code>
@@ -214,7 +215,7 @@
             </dl>
           </div>
 
-          <div>
+          <div data-oOrder=3>
             <figure>sort(ev,order)</figure>
             <figcaption>Sort the list</figcaption>
             <code>instance.sort(3,'asc')</code>
@@ -228,7 +229,7 @@
             </dl>
           </div>
 
-          <div>
+          <div data-oOrder=4>
             <figure>sort(ev,order)</figure>
             <figcaption>Sort the list</figcaption>
             <code>instance.sort(3,'asc')<br>
@@ -245,7 +246,7 @@
             </dl>
           </div>
 
-          <div>
+          <div data-oOrder=5>
             <figure>number lastPage()</figure>
             <figcaption>return the current amount of pages based on string research and amount of lines per pages</figcaption>
             <code>instance.lastPage()</code>
@@ -254,7 +255,7 @@
             </dl>
           </div>
 
-          <div>
+          <div data-oOrder=6>
             <figure>number currentPage()</figure>
             <figcaption>return the number of the current page</figcaption>
             <code>instance.currentPage()</code>
@@ -263,7 +264,7 @@
             </dl>
           </div>
 
-          <div>
+          <div data-oOrder=7>
             <figure>page(arg1,arg2)</figure>
             <figcaption>go to this page, if possible</figcaption>
             <code>instance.page(4)<br>
@@ -283,7 +284,7 @@
             </dl>
           </div>
 
-          <div>
+          <div data-oOrder=8>
             <figure>clear()</figure>
             <figcaption>empty the list completely</figcaption>
             <code>instance.clear()</code>
@@ -292,7 +293,7 @@
             </dl>
           </div>
 
-          <div>
+          <div data-oOrder=9>
             <figure>repopulate()</figure>
             <figcaption>refill the list with the content of instance.listId</figcaption>
             <code>instance.repopulate()</code>
@@ -301,7 +302,7 @@
             </dl>
           </div>
 
-          <div>
+          <div data-oOrder=10>
             <figure>setLpp(input)</figure>
             <figcaption>allow the use of an input to change the amount of lines per pages. refresh the pages automaticaly</figcaption>
             <code>instance.setLpp(this)</code>
@@ -311,7 +312,7 @@
             </dl>
           </div>
 
-          <div>
+          <div data-oOrder=11>
             <figure>genSorters(containerID,headerClass,labelClass,arg1,arg2,...)</figure>
             <figcaption>generate a header with controls to sort the list</figcaption>
             <code>instance.</code>
@@ -328,6 +329,12 @@
           </div>
 
         </div><!--funcList-->
+        <nav>
+          <span id='pageNb'></span>
+          <!--TODO:Show all/1-->
+          <button onclick="func.page('-')">Prev</button>
+          <button onclick="func.page('+')">Next</button>
+        </nav>
       </section>
     </main><!-- /.container -->
 
@@ -337,8 +344,8 @@
     <script>
     window.onload = function() {
     //funcList
-    func = new SPO('funcList',1);
-
+    func = new SPO('funcList',1,'pageNb');
+    func.genSorters('funcListHeader','Header','col-md1 col-md-offset-1','Procedure','Description');
     };
     function makebtn(i){
     btn = document.createElement("input");
