@@ -17,8 +17,22 @@ h1{
 	color: lime;
 
 }
+.solidBG{
+	background-color: #222;
+	border-color: #080808;
+	background-image: unset;
+}
 #navbar > button{
 	margin-top: 1.5%;
+}
+.navbar-brand > span:nth-child(1){
+	color:red;
+}
+.navbar-brand > span:nth-child(2){
+	color:green;
+}
+.navbar-brand > span:nth-child(3){
+	color:blue;
 }
 code > script{
 	display:inline;
