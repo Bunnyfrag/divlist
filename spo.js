@@ -186,7 +186,7 @@
 						break;
 					case '-' :	if(arg2) pageNumber = this.currentPage() - arguments[1]; else pageNumber = this.currentPage() -1;
 						break;
-					default: throw  new Error('First argument must be either a number or one of these character: "L","+","-"');
+					default: throw new Error('First argument must be either a number or one of these character: "L","+","-"');
 				}
 
 				break;
@@ -232,9 +232,10 @@
 
 		}
 
-		setLpp(input)
+		setLpp(nb)
 		{
-			this.lpp = input.value;
+			if( typeof nb !== 'number' ){ throw new Error('Value need to be a valid number') }
+			this.lpp = nb;
 			this.page();
 		}
 
